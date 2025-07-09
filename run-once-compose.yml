@@ -1,0 +1,13 @@
+# dclint disable service-image-require-explicit-tag
+
+name: namesilo-ddns
+services:
+  app:
+    image: oliviertremblaynoel/namesilo-ddns:latest
+    volumes:
+      - ${LOGS}:/data
+      # - ${NAMESILO_DDNS_SCRIPT}:/entrypoint.sh # Optional : If you want to use your own script
+    environment:
+      - TZ=${TZ}
+      - NAMESILO_TOKEN=${NAMESILO_TOKEN}
+      - DOMAIN=${DOMAIN}

@@ -1,0 +1,13 @@
+# dclint disable service-image-require-explicit-tag
+
+name: namesilo-ddns
+services:
+  ofelia:
+    image: mcuadros/ofelia:latest
+    volumes:
+      - ${OFELIA_CONFIG}:/config.ini
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      - TZ=${TZ}
+    command: daemon --config=/config.ini
+    restart: unless-stopped
