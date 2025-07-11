@@ -5,7 +5,7 @@ A DDNS container for Namesilo records. The current script expects that you have 
 ## How to use
 
 - Schedule with [ofelia](https://github.com/mcuadros/ofelia). An example is provided.
-- Use `docker compose up --pull-always` to run the script once.
+- Use `docker compose up` to run the script once.
 
 ## Development
 

@@ -13,13 +13,9 @@ LABEL \
 # hadolint ignore=DL3018
 RUN apk add --no-cache \
     curl \
+    bind-tools \
     tzdata \
     xmlstarlet
 
 COPY /entrypoint.sh /entrypoint.sh
-
-VOLUME /data
-
-WORKDIR /data
-
 ENTRYPOINT ["/entrypoint.sh"]
